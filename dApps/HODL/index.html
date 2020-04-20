@@ -57,12 +57,16 @@
     <script src="https://rawgit.com/ethereum/web3.js/0.16.0/dist/web3.min.js"></script>
 
     <script>
-        if (typeof web3 !== 'undefined') {
-            web3 = new Web3(web3.currentProvider);
-        } else {
-            web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/60eea531b7df4ae4a5f7199f199bf814"));
-        }
+        // if (typeof web3 !== 'undefined') {
+        //     web3 = new Web3(web3.currentProvider);
+        // } else {
+        //     web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/60eea531b7df4ae4a5f7199f199bf814"));
+        // }
+        web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/60eea531b7df4ae4a5f7199f199bf814"));
+
         var account = web3.eth.accounts[0];
+        console.log('account', account)
+
         var accountInterval = setInterval(function () {
             var accountInterval = setInterval(function () {
                 if (web3.eth.accounts[0] !== account) {
@@ -120,7 +124,10 @@
         // window.alert('Sua mensagem aqui.');
         var Hodl = HodlContract.at('0x0ec0b195f611f2142dd90289c7f482180e6a300b');
         console.log(Hodl);
+
+
         address = account
+        console.log('address', address);
 
 
         $("#button1").click(function (web3) {
